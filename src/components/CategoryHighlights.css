@@ -1,0 +1,128 @@
+.category-highlights {
+  background-color: #FFFFFF;
+  padding: 96px 24px;
+}
+
+.category-highlights__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-highlights__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.category-highlights__eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4FAE8C;
+  margin-bottom: 14px;
+}
+
+.category-highlights__title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.25;
+  color: #16241E;
+  max-width: 520px;
+  margin: 0;
+}
+
+.category-highlights__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  background-color: #FAFAF9;
+  border: 1px solid #E2E8E4;
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(22, 36, 30, 0.1);
+  border-color: #4FAE8C;
+}
+
+.category-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: rgba(79, 174, 140, 0.12);
+  color: #1F4A3D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.category-card:hover .category-card__icon {
+  background-color: #4FAE8C;
+  color: #FFFFFF;
+}
+
+.category-card__title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #16241E;
+  margin: 0 0 10px;
+}
+
+.category-card__description {
+  font-family: "Inter", sans-serif;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #6B7A75;
+  margin: 0 0 20px;
+}
+
+.category-card__cta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1F4A3D;
+  margin-top: auto;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.category-card:hover .category-card__cta {
+  gap: 10px;
+  color: #4FAE8C;
+}
+
+@media (max-width: 860px) {
+  .category-highlights {
+    padding: 72px 20px;
+  }
+
+  .category-highlights__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-highlights__title {
+    font-size: 28px;
+  }
+}

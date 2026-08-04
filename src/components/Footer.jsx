@@ -1,0 +1,127 @@
+import React from "react";
+import "./Footer.css";
+
+const LINK_GROUPS = [
+  {
+    title: "Shop",
+    links: ["Medicines", "Health Devices", "Subscriptions", "Gift a Package"],
+  },
+  {
+    title: "Company",
+    links: ["About Us", "Branch Locator", "Careers", "Blog"],
+  },
+  {
+    title: "Support",
+    links: ["FAQ", "Track Order", "Returns & Exchanges", "Contact Us"],
+  },
+  {
+    title: "For Business",
+    links: ["Retailer Registration", "Bulk Ordering", "Partner With Us"],
+  },
+];
+
+const SOCIALS = [
+  {
+    label: "Facebook",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M14 9h3V6h-3c-1.66 0-3 1.34-3 3v2H9v3h2v7h3v-7h3l1-3h-4V9c0-.55.45-1 1-1Z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3.5a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM20.44 20h-3.37v-5.98c0-1.43-.03-3.26-1.99-3.26-1.99 0-2.3 1.55-2.3 3.16V20h-3.37V8.5h3.24v1.57h.05c.45-.86 1.56-1.77 3.21-1.77 3.43 0 4.06 2.26 4.06 5.2V20Z" />
+      </svg>
+    ),
+  },
+];
+
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <div className="footer__inner">
+        <div className="footer__top">
+          <div className="footer__brand">
+            <a href="#" className="footer__logo">
+              <span className="footer__logo-icon">
+                <span className="footer__logo-bar footer__logo-bar--v" />
+                <span className="footer__logo-bar footer__logo-bar--h" />
+              </span>
+              <span className="footer__logo-text">
+                HealthAnchor
+                <span className="footer__logo-sub">Pharmacy</span>
+              </span>
+            </a>
+
+            <p className="footer__tagline">
+              Medicines, health devices, and pharmacist guidance — backed by
+              real branches near you.
+            </p>
+
+            <div className="footer__socials">
+              {SOCIALS.map((social) => (
+                <a
+                  href="#"
+                  className="footer__social-btn"
+                  aria-label={social.label}
+                  key={social.label}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="footer__links">
+            {LINK_GROUPS.map((group) => (
+              <div className="footer__link-group" key={group.title}>
+                <h4 className="footer__link-title">{group.title}</h4>
+                <ul className="footer__link-list">
+                  {group.links.map((link) => (
+                    <li key={link}>
+                      <a href="#" className="footer__link">
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="footer__bottom">
+          <p className="footer__copyright">
+            &copy; {new Date().getFullYear()} HealthAnchor Pharmacy. All
+            rights reserved.
+          </p>
+
+          <div className="footer__legal">
+            <a href="#" className="footer__legal-link">
+              Privacy Policy
+            </a>
+            <a href="#" className="footer__legal-link">
+              Terms of Service
+            </a>
+            <a href="#" className="footer__legal-link">
+              Pharmacy License Info
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

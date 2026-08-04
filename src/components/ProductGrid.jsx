@@ -1,0 +1,80 @@
+import React from "react";
+import ProductCard from "./ProductCard";
+import "./ProductGrid.css";
+
+const MOCK_PRODUCTS = [
+  {
+    id: 1,
+    name: "Metformin 500mg",
+    category: "Diabetes Care",
+    price: 340,
+    unit: "Strip of 10",
+    inStock: true,
+    requiresPrescription: true,
+  },
+  {
+    id: 2,
+    name: "Panadol Extra",
+    category: "Pain Relief",
+    price: 120,
+    compareAtPrice: 150,
+    unit: "Strip of 20",
+    inStock: true,
+    requiresPrescription: false,
+  },
+  {
+    id: 3,
+    name: "Vitamin D3 1000IU",
+    category: "Wellness",
+    price: 680,
+    unit: "Bottle of 60",
+    inStock: false,
+    requiresPrescription: false,
+  },
+  {
+    id: 4,
+    name: "Digital BP Monitor",
+    category: "Health Devices",
+    price: 4200,
+    compareAtPrice: 4800,
+    unit: "1 unit",
+    inStock: true,
+    requiresPrescription: false,
+  },
+  {
+    id: 5,
+    name: "Amoxicillin 250mg",
+    category: "Antibiotics",
+    price: 210,
+    unit: "Strip of 12",
+    inStock: true,
+    requiresPrescription: true,
+  },
+  {
+    id: 6,
+    name: "Glucometer Kit",
+    category: "Health Devices",
+    price: 2600,
+    unit: "1 unit",
+    inStock: false,
+    requiresPrescription: false,
+  },
+];
+
+export default function ProductGrid({ products = MOCK_PRODUCTS }) {
+  if (products.length === 0) {
+    return (
+      <div className="product-grid__empty">
+        <p>No products match your filters right now.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="product-grid">
+      {products.map((product) => (
+        <ProductCard key={product.id} {...product} />
+      ))}
+    </div>
+  );
+}

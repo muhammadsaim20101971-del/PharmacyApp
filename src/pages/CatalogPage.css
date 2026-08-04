@@ -1,0 +1,42 @@
+.catalog-page {
+  background-color: #FFFFFF;
+  padding: 48px 24px 96px;
+}
+
+.catalog-page__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.catalog-page__heading {
+  margin-bottom: 36px;
+}
+
+.catalog-page__eyebrow {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4FAE8C;
+  margin-bottom: 12px;
+}
+
+.catalog-page__title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: #16241E;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .catalog-page {
+    padding: 36px 20px 72px;
+  }
+
+  .catalog-page__title {
+    font-size: 24px;
+  }
+}
