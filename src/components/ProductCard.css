@@ -21,6 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 .product-card__media-icon {
@@ -83,6 +85,11 @@
   text-transform: uppercase;
   color: #4FAE8C;
   margin-bottom: 8px;
+}
+
+.product-card__name-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .product-card__name {
