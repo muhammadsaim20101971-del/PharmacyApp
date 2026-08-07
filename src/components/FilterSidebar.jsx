@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./FilterSidebar.css";
 
 const CATEGORIES = [
@@ -9,27 +9,17 @@ const CATEGORIES = [
   "Antibiotics",
 ];
 
-export default function FilterSidebar() {
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [maxPrice, setMaxPrice] = useState(5000);
-  const [inStockOnly, setInStockOnly] = useState(false);
-  const [prescriptionOnly, setPrescriptionOnly] = useState(false);
-
-  const toggleCategory = (category) => {
-    setSelectedCategories((prev) =>
-      prev.includes(category)
-        ? prev.filter((item) => item !== category)
-        : [...prev, category]
-    );
-  };
-
-  const clearFilters = () => {
-    setSelectedCategories([]);
-    setMaxPrice(5000);
-    setInStockOnly(false);
-    setPrescriptionOnly(false);
-  };
-
+export default function FilterSidebar({
+  selectedCategories,
+  onToggleCategory,
+  maxPrice,
+  onMaxPriceChange,
+  inStockOnly,
+  onToggleInStock,
+  prescriptionOnly,
+  onTogglePrescription,
+  onClear,
+}) {
   const hasActiveFilters =
     selectedCategories.length > 0 ||
     maxPrice < 5000 ||
@@ -41,7 +31,7 @@ export default function FilterSidebar() {
       <div className="filter-sidebar__header">
         <h3 className="filter-sidebar__title">Filters</h3>
         {hasActiveFilters && (
-          <button className="filter-sidebar__clear" onClick={clearFilters}>
+          <button className="filter-sidebar__clear" onClick={onClear}>
             Clear all
           </button>
         )}
@@ -55,7 +45,7 @@ export default function FilterSidebar() {
               <input
                 type="checkbox"
                 checked={selectedCategories.includes(category)}
-                onChange={() => toggleCategory(category)}
+                onChange={() => onToggleCategory(category)}
               />
               <span className="filter-checkbox__box" />
               <span className="filter-checkbox__label">{category}</span>
@@ -72,7 +62,7 @@ export default function FilterSidebar() {
           max="5000"
           step="50"
           value={maxPrice}
-          onChange={(event) => setMaxPrice(Number(event.target.value))}
+          onChange={(event) => onMaxPriceChange(Number(event.target.value))}
           className="filter-sidebar__range"
         />
         <div className="filter-sidebar__range-value">Up to Rs. {maxPrice}</div>
@@ -85,7 +75,7 @@ export default function FilterSidebar() {
             <input
               type="checkbox"
               checked={inStockOnly}
-              onChange={() => setInStockOnly((prev) => !prev)}
+              onChange={onToggleInStock}
             />
             <span className="filter-checkbox__box" />
             <span className="filter-checkbox__label">In stock only</span>
@@ -95,7 +85,7 @@ export default function FilterSidebar() {
             <input
               type="checkbox"
               checked={prescriptionOnly}
-              onChange={() => setPrescriptionOnly((prev) => !prev)}
+              onChange={onTogglePrescription}
             />
             <span className="filter-checkbox__box" />
             <span className="filter-checkbox__label">Prescription required</span>

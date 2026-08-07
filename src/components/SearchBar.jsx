@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./SearchBar.css";
 
-export default function SearchBar({ placeholder = "Search medicines, devices, and more..." }) {
-  const [query, setQuery] = useState("");
-
+export default function SearchBar({
+  value,
+  onChange,
+  placeholder = "Search medicines, devices, and more...",
+}) {
   return (
     <div className="search-bar">
       <svg
@@ -23,15 +25,15 @@ export default function SearchBar({ placeholder = "Search medicines, devices, an
         type="text"
         className="search-bar__input"
         placeholder={placeholder}
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
       />
 
-      {query.length > 0 && (
+      {value.length > 0 && (
         <button
           className="search-bar__clear"
           aria-label="Clear search"
-          onClick={() => setQuery("")}
+          onClick={() => onChange("")}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <line x1="18" y1="6" x2="6" y2="18" />
