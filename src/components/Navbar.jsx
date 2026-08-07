@@ -5,9 +5,9 @@ import "./Navbar.css";
 const NAV_LINKS = [
   { label: "Home", path: "/" },
   { label: "Catalog", path: "/catalog" },
-  { label: "Consultation", path: "/" },
-  { label: "Blog", path: "/" },
-  { label: "About", path: "/" },
+  { label: "Consultation", path: "#" },
+  { label: "Blog", path: "#" },
+  { label: "About", path: "#" },
 ];
 
 export default function Navbar() {
@@ -37,9 +37,14 @@ export default function Navbar() {
 
             if (isPlaceholder) {
               return (
-                <a key={link.label} href="#" className="navbar__link">
+                <button
+                  key={link.label}
+                  type="button"
+                  className="navbar__link"
+                  style={{ background: "none", border: "none", cursor: "pointer" }}
+                >
                   {link.label}
-                </a>
+                </button>
               );
             }
 
@@ -106,9 +111,13 @@ export default function Navbar() {
             </button>
           </div>
 
-          <a href="#" className="navbar__login-btn">
+          <button
+            type="button"
+            className="navbar__login-btn"
+            style={{ border: "none", cursor: "pointer" }}
+          >
             Log in
-          </a>
+          </button>
         </div>
 
         <button

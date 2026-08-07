@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const LINK_GROUPS = [
@@ -55,7 +56,7 @@ export default function Footer() {
       <div className="footer__inner">
         <div className="footer__top">
           <div className="footer__brand">
-            <a href="#" className="footer__logo">
+            <Link to="/" className="footer__logo">
               <span className="footer__logo-icon">
                 <span className="footer__logo-bar footer__logo-bar--v" />
                 <span className="footer__logo-bar footer__logo-bar--h" />
@@ -64,7 +65,7 @@ export default function Footer() {
                 HealthAnchor
                 <span className="footer__logo-sub">Pharmacy</span>
               </span>
-            </a>
+            </Link>
 
             <p className="footer__tagline">
               Medicines, health devices, and pharmacist guidance — backed by
@@ -73,14 +74,15 @@ export default function Footer() {
 
             <div className="footer__socials">
               {SOCIALS.map((social) => (
-                <a
-                  href="#"
+                <button
+                  type="button"
                   className="footer__social-btn"
                   aria-label={social.label}
                   key={social.label}
+                  style={{ background: "none", cursor: "pointer" }}
                 >
                   {social.icon}
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -92,9 +94,13 @@ export default function Footer() {
                 <ul className="footer__link-list">
                   {group.links.map((link) => (
                     <li key={link}>
-                      <a href="#" className="footer__link">
+                      <button
+                        type="button"
+                        className="footer__link"
+                        style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                      >
                         {link}
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -110,15 +116,27 @@ export default function Footer() {
           </p>
 
           <div className="footer__legal">
-            <a href="#" className="footer__legal-link">
+            <button
+              type="button"
+              className="footer__legal-link"
+              style={{ background: "none", border: "none", cursor: "pointer" }}
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="footer__legal-link">
+            </button>
+            <button
+              type="button"
+              className="footer__legal-link"
+              style={{ background: "none", border: "none", cursor: "pointer" }}
+            >
               Terms of Service
-            </a>
-            <a href="#" className="footer__legal-link">
+            </button>
+            <button
+              type="button"
+              className="footer__legal-link"
+              style={{ background: "none", border: "none", cursor: "pointer" }}
+            >
               Pharmacy License Info
-            </a>
+            </button>
           </div>
         </div>
       </div>

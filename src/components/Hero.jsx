@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 
 const STATS = [
@@ -26,12 +27,12 @@ export default function Hero() {
           </p>
 
           <div className="hero__cta-row">
-            <a href="#" className="hero__btn hero__btn--primary">
+            <Link to="/catalog" className="hero__btn hero__btn--primary">
               Browse medicines
-            </a>
-            <a href="#" className="hero__btn hero__btn--outline">
+            </Link>
+            <button type="button" className="hero__btn hero__btn--outline">
               Book a consultation
-            </a>
+            </button>
           </div>
 
           <div className="hero__stats">

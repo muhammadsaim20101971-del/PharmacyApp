@@ -12,6 +12,24 @@
   margin-bottom: 36px;
 }
 
+.catalog-page__search {
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.catalog-page__layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .catalog-page__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .catalog-page__eyebrow {
   display: block;
   font-family: "Inter", sans-serif;

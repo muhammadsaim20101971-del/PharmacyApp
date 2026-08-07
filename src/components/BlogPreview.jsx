@@ -10,7 +10,6 @@ const POSTS = [
     readTime: "4 min read",
     icon: (
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M12 21s7-6.5 7-12a5 5 0 0 0-9-3 5 5 0 0 0-9 3c0 5.5 7 12 7 12" opacity="0" />
         <path d="M3 12h4l2-5 3 10 2-7h7" />
       </svg>
     ),
@@ -55,18 +54,34 @@ export default function BlogPreview() {
             <h2 className="blog-preview__title">Health guidance worth reading</h2>
           </div>
 
-          <a href="#" className="blog-preview__view-all">
+          <button
+            type="button"
+            className="blog-preview__view-all"
+            style={{ background: "none", border: "none", cursor: "pointer" }}
+          >
             View all articles
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
-          </a>
+          </button>
         </div>
 
         <div className="blog-preview__grid">
           {POSTS.map((post) => (
-            <a href="#" className="blog-card" key={post.title}>
+            <button
+              type="button"
+              className="blog-card"
+              key={post.title}
+              style={{
+                background: "#FFFFFF",
+                border: "1px solid #E2E8E4",
+                cursor: "pointer",
+                textAlign: "left",
+                width: "100%",
+                padding: 0,
+              }}
+            >
               <div className="blog-card__thumb">
                 <span className="blog-card__thumb-icon">{post.icon}</span>
               </div>
@@ -77,7 +92,7 @@ export default function BlogPreview() {
                 <p className="blog-card__excerpt">{post.excerpt}</p>
                 <span className="blog-card__meta">{post.readTime}</span>
               </div>
-            </a>
+            </button>
           ))}
         </div>
       </div>
