@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -13,6 +14,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { cartCount } = useCart();
 
   return (
     <header className="navbar">
@@ -94,7 +96,7 @@ export default function Navbar() {
 
             <span className="navbar__icon-divider" />
 
-            <button className="navbar__icon-btn" aria-label="Cart">
+            <Link to="/cart" className="navbar__icon-btn" aria-label="Cart">
               <svg
                 width="18"
                 height="18"
@@ -107,8 +109,10 @@ export default function Navbar() {
                 <circle cx="20" cy="21" r="1" />
                 <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
               </svg>
-              <span className="navbar__cart-count">2</span>
-            </button>
+              {cartCount > 0 && (
+                <span className="navbar__cart-count">{cartCount}</span>
+              )}
+            </Link>
           </div>
 
           <button

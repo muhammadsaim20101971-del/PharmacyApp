@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "./ProductCard.css";
 
 export default function ProductCard({
@@ -13,6 +14,14 @@ export default function ProductCard({
   requiresPrescription = false,
 }) {
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const [justAdded, setJustAdded] = useState(false);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({ id, name, category, price, compareAtPrice, unit });
+    setJustAdded(true);
+    setTimeout(() => setJustAdded(false), 1500);
+  };
 
   return (
     <div className="product-card">
@@ -61,7 +70,12 @@ export default function ProductCard({
           </div>
 
           {inStock ? (
-            <button className="product-card__cta">Add to cart</button>
+            <button
+              className={`product-card__cta ${justAdded ? "product-card__cta--done" : ""}`}
+              onClick={handleAddToCart}
+            >
+              {justAdded ? "Added ✓" : "Add to cart"}
+            </button>
           ) : (
             <button className="product-card__cta product-card__cta--outline">
               Notify me

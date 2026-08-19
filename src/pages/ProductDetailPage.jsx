@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductGrid from "../components/ProductGrid";
 import PRODUCTS from "../data/products";
+import { useCart } from "../context/CartContext";
 import "./ProductDetailPage.css";
 
 const NEARBY_BRANCHES = [
@@ -21,6 +22,24 @@ export default function ProductDetailPage() {
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [priceAlert, setPriceAlert] = useState(false);
   const [notifyRequested, setNotifyRequested] = useState(false);
+  const [justAdded, setJustAdded] = useState(false);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(
+      {
+        id: product.id,
+        name: product.name,
+        category: product.category,
+        price: product.price,
+        compareAtPrice: product.compareAtPrice,
+        unit: product.unit,
+      },
+      quantity
+    );
+    setJustAdded(true);
+    setTimeout(() => setJustAdded(false), 1500);
+  };
 
   const relatedProducts = PRODUCTS.filter(
     (item) => item.category === product.category && item.id !== product.id
@@ -95,7 +114,9 @@ export default function ProductDetailPage() {
                   </div>
 
                   <div className="product-detail__actions">
-                    <button className="product-detail__cta">Add to cart</button>
+                    <button className="product-detail__cta" onClick={handleAddToCart}>
+                      {justAdded ? "Added to cart ✓" : "Add to cart"}
+                    </button>
                     <button
                       className={`product-detail__wishlist-btn ${
                         isWishlisted ? "product-detail__wishlist-btn--active" : ""

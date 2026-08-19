@@ -167,6 +167,14 @@
   color: #FFFFFF;
 }
 
+.product-card__cta--done {
+  background-color: #1F4A3D;
+}
+
+.product-card__cta--done:hover {
+  background-color: #1F4A3D;
+}
+
 .product-card__stock-note {
   font-family: "Inter", sans-serif;
   font-size: 12px;
