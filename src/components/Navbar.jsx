@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -15,6 +16,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const { cartCount } = useCart();
+  const { wishlistCount } = useWishlist();
 
   return (
     <header className="navbar">
@@ -81,7 +83,7 @@ export default function Navbar() {
 
             <span className="navbar__icon-divider" />
 
-            <button className="navbar__icon-btn" aria-label="Wishlist">
+            <Link to="/wishlist" className="navbar__icon-btn" aria-label="Wishlist">
               <svg
                 width="18"
                 height="18"
@@ -92,7 +94,10 @@ export default function Navbar() {
               >
                 <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z" />
               </svg>
-            </button>
+              {wishlistCount > 0 && (
+                <span className="navbar__cart-count">{wishlistCount}</span>
+              )}
+            </Link>
 
             <span className="navbar__icon-divider" />
 
@@ -115,13 +120,12 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <button
-            type="button"
+          <Link
+            to="/login"
             className="navbar__login-btn"
-            style={{ border: "none", cursor: "pointer" }}
           >
             Log in
-          </button>
+          </Link>
         </div>
 
         <button

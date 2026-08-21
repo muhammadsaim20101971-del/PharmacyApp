@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 import "./ProductCard.css";
 
 export default function ProductCard({
@@ -13,14 +14,21 @@ export default function ProductCard({
   inStock = true,
   requiresPrescription = false,
 }) {
-  const [isWishlisted, setIsWishlisted] = useState(false);
   const [justAdded, setJustAdded] = useState(false);
   const { addToCart } = useCart();
+  const { isWishlisted, toggleWishlist } = useWishlist();
+
+  const wishlisted = isWishlisted(id);
 
   const handleAddToCart = () => {
     addToCart({ id, name, category, price, compareAtPrice, unit });
     setJustAdded(true);
     setTimeout(() => setJustAdded(false), 1500);
+  };
+
+  const handleToggleWishlist = (event) => {
+    event.preventDefault();
+    toggleWishlist({ id, name, category, price, compareAtPrice, unit, inStock, requiresPrescription });
   };
 
   return (
@@ -39,14 +47,11 @@ export default function ProductCard({
         )}
 
         <button
-          className={`product-card__wishlist ${isWishlisted ? "product-card__wishlist--active" : ""}`}
+          className={`product-card__wishlist ${wishlisted ? "product-card__wishlist--active" : ""}`}
           aria-label="Add to wishlist"
-          onClick={(event) => {
-            event.preventDefault();
-            setIsWishlisted((prev) => !prev);
-          }}
+          onClick={handleToggleWishlist}
         >
-          <svg width="17" height="17" viewBox="0 0 24 24" fill={isWishlisted ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill={wishlisted ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8">
             <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z" />
           </svg>
         </button>

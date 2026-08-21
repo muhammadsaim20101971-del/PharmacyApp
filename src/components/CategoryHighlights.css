@@ -39,6 +39,7 @@
 .category-highlights__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   gap: 24px;
   align-items: stretch;
 }
@@ -47,6 +48,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  align-self: stretch;
+  box-sizing: border-box;
   height: 100%;
   background-color: #FAFAF9;
   border: 1px solid #E2E8E4;

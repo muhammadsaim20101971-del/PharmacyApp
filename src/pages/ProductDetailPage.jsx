@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import ProductGrid from "../components/ProductGrid";
 import PRODUCTS from "../data/products";
 import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 import "./ProductDetailPage.css";
 
 const NEARBY_BRANCHES = [
@@ -19,11 +20,26 @@ export default function ProductDetailPage() {
     PRODUCTS.find((item) => String(item.id) === id) || PRODUCTS[0];
 
   const [quantity, setQuantity] = useState(1);
-  const [isWishlisted, setIsWishlisted] = useState(false);
   const [priceAlert, setPriceAlert] = useState(false);
   const [notifyRequested, setNotifyRequested] = useState(false);
   const [justAdded, setJustAdded] = useState(false);
   const { addToCart } = useCart();
+  const { isWishlisted, toggleWishlist } = useWishlist();
+
+  const wishlisted = isWishlisted(product.id);
+
+  const handleToggleWishlist = () => {
+    toggleWishlist({
+      id: product.id,
+      name: product.name,
+      category: product.category,
+      price: product.price,
+      compareAtPrice: product.compareAtPrice,
+      unit: product.unit,
+      inStock: product.inStock,
+      requiresPrescription: product.requiresPrescription,
+    });
+  };
 
   const handleAddToCart = () => {
     addToCart(
@@ -119,12 +135,12 @@ export default function ProductDetailPage() {
                     </button>
                     <button
                       className={`product-detail__wishlist-btn ${
-                        isWishlisted ? "product-detail__wishlist-btn--active" : ""
+                        wishlisted ? "product-detail__wishlist-btn--active" : ""
                       }`}
-                      onClick={() => setIsWishlisted((prev) => !prev)}
+                      onClick={handleToggleWishlist}
                       aria-label="Add to wishlist"
                     >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill={isWishlisted ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill={wishlisted ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8">
                         <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z" />
                       </svg>
                     </button>

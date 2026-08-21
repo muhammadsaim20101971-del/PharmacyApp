@@ -5,19 +5,38 @@ import "./Footer.css";
 const LINK_GROUPS = [
   {
     title: "Shop",
-    links: ["Medicines", "Health Devices", "Subscriptions", "Gift a Package"],
+    links: [
+      { label: "Medicines", path: "/catalog" },
+      { label: "Health Devices", path: "#" },
+      { label: "Subscriptions", path: "/subscriptions" },
+      { label: "Gift a Package", path: "#" },
+    ],
   },
   {
     title: "Company",
-    links: ["About Us", "Branch Locator", "Careers", "Blog"],
+    links: [
+      { label: "About Us", path: "#" },
+      { label: "Branch Locator", path: "#" },
+      { label: "Careers", path: "#" },
+      { label: "Blog", path: "#" },
+    ],
   },
   {
     title: "Support",
-    links: ["FAQ", "Track Order", "Returns & Exchanges", "Contact Us"],
+    links: [
+      { label: "FAQ", path: "#" },
+      { label: "Track Order", path: "#" },
+      { label: "Returns & Exchanges", path: "#" },
+      { label: "Contact Us", path: "#" },
+    ],
   },
   {
     title: "For Business",
-    links: ["Retailer Registration", "Bulk Ordering", "Partner With Us"],
+    links: [
+      { label: "Retailer Registration", path: "/register" },
+      { label: "Bulk Ordering", path: "#" },
+      { label: "Partner With Us", path: "#" },
+    ],
   },
 ];
 
@@ -92,17 +111,25 @@ export default function Footer() {
               <div className="footer__link-group" key={group.title}>
                 <h4 className="footer__link-title">{group.title}</h4>
                 <ul className="footer__link-list">
-                  {group.links.map((link) => (
-                    <li key={link}>
-                      <button
-                        type="button"
-                        className="footer__link"
-                        style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                      >
-                        {link}
-                      </button>
-                    </li>
-                  ))}
+                  {group.links.map((link) =>
+                    link.path === "#" ? (
+                      <li key={link.label}>
+                        <button
+                          type="button"
+                          className="footer__link"
+                          style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                        >
+                          {link.label}
+                        </button>
+                      </li>
+                    ) : (
+                      <li key={link.label}>
+                        <Link to={link.path} className="footer__link">
+                          {link.label}
+                        </Link>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             ))}

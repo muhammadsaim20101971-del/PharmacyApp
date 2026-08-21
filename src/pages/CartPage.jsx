@@ -119,9 +119,9 @@ export default function CartPage() {
                   <span>Rs. {total}</span>
                 </div>
 
-                <button className="cart-summary__checkout">
+                <Link to="/checkout" className="cart-summary__checkout">
                   Proceed to checkout
-                </button>
+                </Link>
 
                 <Link to="/catalog" className="cart-summary__continue">
                   Continue shopping

@@ -1,0 +1,331 @@
+.checkout-page {
+  background-color: #FFFFFF;
+  padding: 48px 24px 96px;
+  min-height: 60vh;
+}
+
+.checkout-page__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.checkout-page__heading {
+  margin-bottom: 32px;
+}
+
+.checkout-page__eyebrow {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4FAE8C;
+  margin-bottom: 12px;
+}
+
+.checkout-page__title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: #16241E;
+  margin: 0;
+}
+
+.checkout-page__layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+.checkout-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.checkout-section {
+  background-color: #FAFAF9;
+  border: 1px solid #E2E8E4;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.checkout-section__title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: #16241E;
+  margin: 0 0 18px;
+}
+
+.checkout-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.checkout-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.checkout-field label {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6B7A75;
+}
+
+.checkout-field input {
+  font-family: "Inter", sans-serif;
+  font-size: 14.5px;
+  color: #16241E;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8E4;
+  border-radius: 10px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checkout-field input:focus {
+  border-color: #4FAE8C;
+  box-shadow: 0 0 0 4px rgba(79, 174, 140, 0.12);
+}
+
+.checkout-field input:disabled {
+  background-color: #F1F3F2;
+  color: #B7C2BD;
+  cursor: not-allowed;
+}
+
+.checkout-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkout-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1.5px solid #E2E8E4;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.checkout-option input {
+  width: 17px;
+  height: 17px;
+  accent-color: #4FAE8C;
+  flex-shrink: 0;
+}
+
+.checkout-option__title {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: #16241E;
+}
+
+.checkout-option__subtitle {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 12.5px;
+  color: #6B7A75;
+  margin-top: 2px;
+}
+
+.checkout-option--active {
+  border-color: #4FAE8C;
+  background-color: #F1F7F4;
+}
+
+.checkout-summary {
+  background-color: #FAFAF9;
+  border: 1px solid #E2E8E4;
+  border-radius: 16px;
+  padding: 24px;
+  position: sticky;
+  top: 24px;
+}
+
+.checkout-summary__title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #16241E;
+  margin: 0 0 18px;
+}
+
+.checkout-summary__items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.checkout-summary__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 13.5px;
+  color: #16241E;
+}
+
+.checkout-summary__qty {
+  color: #6B7A75;
+}
+
+.checkout-summary__divider {
+  height: 1px;
+  background-color: #E2E8E4;
+  margin: 16px 0;
+}
+
+.checkout-summary__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #6B7A75;
+  margin-bottom: 10px;
+}
+
+.checkout-summary__row--total {
+  font-weight: 700;
+  font-size: 16px;
+  color: #16241E;
+  margin-bottom: 24px;
+}
+
+.checkout-summary__place-order {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #1F4A3D;
+  border: none;
+  padding: 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-summary__place-order:hover {
+  background-color: #16362C;
+}
+
+.checkout-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 24px;
+  background-color: #FAFAF9;
+  border: 1px dashed #E2E8E4;
+  border-radius: 16px;
+}
+
+.checkout-empty p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #6B7A75;
+  margin: 0 0 20px;
+}
+
+.checkout-empty__cta {
+  font-family: "Inter", sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #4FAE8C;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+}
+
+.order-confirmed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 24px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.order-confirmed__icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background-color: #4FAE8C;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.order-confirmed__title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #16241E;
+  margin: 0 0 12px;
+}
+
+.order-confirmed__text {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6B7A75;
+  margin: 0 0 32px;
+}
+
+.order-confirmed__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-confirmed__cta {
+  font-family: "Inter", sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #4FAE8C;
+  border: none;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.order-confirmed__cta--outline {
+  background-color: transparent;
+  color: #1F4A3D;
+  border: 1.5px solid #1F4A3D;
+}
+
+@media (max-width: 860px) {
+  .checkout-page__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-field-row {
+    grid-template-columns: 1fr;
+  }
+}

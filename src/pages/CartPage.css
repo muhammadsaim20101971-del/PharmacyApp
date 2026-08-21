@@ -235,7 +235,11 @@
 }
 
 .cart-summary__checkout {
+  display: block;
+  box-sizing: border-box;
   width: 100%;
+  text-align: center;
+  text-decoration: none;
   font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 600;
