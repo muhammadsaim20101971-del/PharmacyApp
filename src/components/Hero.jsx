@@ -30,9 +30,9 @@ export default function Hero() {
             <Link to="/catalog" className="hero__btn hero__btn--primary">
               Browse medicines
             </Link>
-            <button type="button" className="hero__btn hero__btn--outline">
+            <Link to="/consultation" className="hero__btn hero__btn--outline">
               Book a consultation
-            </button>
+            </Link>
           </div>
 
           <div className="hero__stats">
@@ -49,43 +49,45 @@ export default function Hero() {
         </div>
 
         <div className="hero__visual">
-          <div className="hero__card">
-            <div className="hero__badge hero__badge--top">
-              Verified pharmacist
+          <div className="hero__emblem-wrap">
+            <div className="hero__emblem-ring hero__emblem-ring--outer" />
+            <div className="hero__emblem-ring hero__emblem-ring--inner" />
+
+            <div className="hero__emblem">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                <rect x="3" y="9" width="18" height="9" rx="2" />
+                <path d="M3 13h18" />
+                <path d="M8 9V6a4 4 0 0 1 8 0v3" />
+              </svg>
             </div>
 
-            <div className="hero__card-header">
-              <span className="hero__card-dot" />
-              <span className="hero__card-title">Order #HA-2291</span>
+            <div className="hero__orbit-icon hero__orbit-icon--pill">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <rect x="2" y="8" width="20" height="8" rx="4" transform="rotate(-45 12 12)" />
+                <line x1="12" y1="8" x2="12" y2="16" transform="rotate(-45 12 12)" />
+              </svg>
             </div>
 
-            <div className="hero__card-row">
-              <span className="hero__card-label">Metformin 500mg</span>
-              <span className="hero__card-value">Qty 2</span>
-            </div>
-            <div className="hero__card-row">
-              <span className="hero__card-label">Vitamin D3</span>
-              <span className="hero__card-value">Qty 1</span>
+            <div className="hero__orbit-icon hero__orbit-icon--pulse">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M3 12h4l2-5 3 10 2-7h7" />
+              </svg>
             </div>
 
-            <div className="hero__card-progress">
-              <div className="hero__card-progress-step hero__card-progress-step--done">
-                <span className="hero__card-progress-dot" />
-                Confirmed
-              </div>
-              <div className="hero__card-progress-step hero__card-progress-step--active">
-                <span className="hero__card-progress-dot" />
-                Out for delivery
-              </div>
-              <div className="hero__card-progress-step">
-                <span className="hero__card-progress-dot" />
-                Delivered
-              </div>
+            <div className="hero__orbit-icon hero__orbit-icon--leaf">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M5 21c8-1 13-6 14-14C11 8 6 13 5 21Z" />
+                <path d="M9 17c2-3 4-5 8-7" />
+              </svg>
             </div>
 
-            <div className="hero__badge hero__badge--bottom">
-              Nearest branch: 1.2 km
+            <div className="hero__orbit-icon hero__orbit-icon--drop">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M12 2s6 7.5 6 12a6 6 0 0 1-12 0c0-4.5 6-12 6-12Z" />
+              </svg>
             </div>
+
+            <span className="hero__emblem-badge">Est. quality care</span>
           </div>
         </div>
       </div>

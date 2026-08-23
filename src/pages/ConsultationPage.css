@@ -1,0 +1,216 @@
+.consultation-page {
+  background-color: #FFFFFF;
+  padding: 48px 24px 96px;
+}
+
+.consultation-page__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.consultation-page__heading {
+  max-width: 560px;
+  margin-bottom: 40px;
+}
+
+.consultation-page__eyebrow {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4FAE8C;
+  margin-bottom: 12px;
+}
+
+.consultation-page__title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: #16241E;
+  margin: 0 0 10px;
+}
+
+.consultation-page__subtext {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6B7A75;
+  margin: 0;
+}
+
+.pharmacist-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.pharmacist-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FAFAF9;
+  border: 1px solid #E2E8E4;
+  border-radius: 16px;
+  padding: 22px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pharmacist-card:hover {
+  border-color: #4FAE8C;
+  box-shadow: 0 12px 28px rgba(22, 36, 30, 0.08);
+}
+
+.pharmacist-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.pharmacist-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #5FC49F 0%, #4FAE8C 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.pharmacist-card__status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6B7A75;
+}
+
+.pharmacist-card__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #B7C2BD;
+  position: relative;
+}
+
+.pharmacist-card__status--online .pharmacist-card__status-dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid #4FAE8C;
+  animation: pharmacist-status-pulse 1.8s ease-out infinite;
+}
+
+@keyframes pharmacist-status-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.pharmacist-card__status--online .pharmacist-card__status-dot {
+  background-color: #4FAE8C;
+}
+
+.pharmacist-card__status--online {
+  color: #1F4A3D;
+}
+
+.pharmacist-card__status--busy .pharmacist-card__status-dot {
+  background-color: #E8965A;
+}
+
+.pharmacist-card__name {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #16241E;
+  margin: 0 0 4px;
+}
+
+.pharmacist-card__specialty {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #16241E;
+  margin: 0 0 2px;
+}
+
+.pharmacist-card__experience {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #6B7A75;
+  margin: 0 0 14px;
+}
+
+.pharmacist-card__reply-time {
+  font-family: "Inter", sans-serif;
+  font-size: 11.5px;
+  color: #B7C2BD;
+  margin-bottom: 18px;
+}
+
+.pharmacist-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.pharmacist-card__btn {
+  text-align: center;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pharmacist-card__btn--primary {
+  background-color: #4FAE8C;
+  color: #FFFFFF;
+}
+
+.pharmacist-card__btn--primary:hover {
+  background-color: #439a7c;
+}
+
+.pharmacist-card__btn--outline {
+  background-color: transparent;
+  color: #1F4A3D;
+  border: 1.5px solid #E2E8E4;
+}
+
+.pharmacist-card__btn--outline:hover {
+  border-color: #1F4A3D;
+}
+
+.pharmacist-card__btn--disabled {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+@media (max-width: 980px) {
+  .pharmacist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .pharmacist-grid {
+    grid-template-columns: 1fr;
+  }
+}

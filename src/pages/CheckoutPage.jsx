@@ -3,12 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useCart } from "../context/CartContext";
+import { useOrders } from "../context/OrdersContext";
 import "./CheckoutPage.css";
 
 const DELIVERY_FEE = 150;
 
 export default function CheckoutPage() {
   const { cartItems, cartTotal, clearCart } = useCart();
+  const { addOrder } = useOrders();
   const navigate = useNavigate();
 
   const [deliveryMethod, setDeliveryMethod] = useState("delivery");
@@ -36,6 +38,13 @@ export default function CheckoutPage() {
     const generatedId = `HA-${Math.floor(1000 + Math.random() * 9000)}`;
     setOrderNumber(generatedId);
     setOrderPlaced(true);
+    addOrder({
+      id: generatedId,
+      items: cartItems,
+      total,
+      deliveryMethod,
+      paymentMethod,
+    });
     clearCart();
   };
 
@@ -76,8 +85,8 @@ export default function CheckoutPage() {
                 successfully. A pharmacist will review it shortly.
               </p>
               <div className="order-confirmed__actions">
-                <Link to="/catalog" className="order-confirmed__cta">
-                  Continue shopping
+                <Link to="/orders" className="order-confirmed__cta">
+                  View my orders
                 </Link>
                 <button
                   className="order-confirmed__cta order-confirmed__cta--outline"

@@ -16,7 +16,7 @@ const LINK_GROUPS = [
     title: "Company",
     links: [
       { label: "About Us", path: "#" },
-      { label: "Branch Locator", path: "#" },
+      { label: "Branch Locator", path: "/branches" },
       { label: "Careers", path: "#" },
       { label: "Blog", path: "#" },
     ],

@@ -5,6 +5,7 @@ import CategoryHighlights from "../components/CategoryHighlights";
 import WhyChooseUs from '../components/WhyChooseUs';
 import BranchLocator from '../components/BranchLocator';
 import BlogPreview from '../components/BlogPreview';
+import FinalCta from '../components/FinalCta';
 import Footer from '../components/Footer';
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <WhyChooseUs />
       <BranchLocator />
       <BlogPreview />
+      <FinalCta />
       <Footer />
     </div>
   )

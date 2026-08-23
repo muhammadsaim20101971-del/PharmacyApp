@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 import { SubscriptionProvider } from './context/SubscriptionContext';
+import { OrdersProvider } from './context/OrdersContext';
 import Home from './pages/Home';
 import CatalogPage from './pages/CatalogPage';
 import ProductDetailPage from './pages/ProductDetailPage';
@@ -13,6 +14,11 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import SubscriptionPlansPage from './pages/SubscriptionPlansPage';
 import MySubscriptionsPage from './pages/MySubscriptionsPage';
+import MyOrdersPage from './pages/MyOrdersPage';
+import BranchLocatorPage from './pages/BranchLocatorPage';
+import ConsultationPage from './pages/ConsultationPage';
+import ChatScreen from './pages/ChatScreen';
+import VideoCallScreen from './pages/VideoCallScreen';
 
 function App() {
   return (
@@ -20,20 +26,27 @@ function App() {
       <CartProvider>
         <WishlistProvider>
           <SubscriptionProvider>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/catalog" element={<CatalogPage />} />
-                <Route path="/product/:id" element={<ProductDetailPage />} />
-                <Route path="/cart" element={<CartPage />} />
-                <Route path="/checkout" element={<CheckoutPage />} />
-                <Route path="/wishlist" element={<WishlistPage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-                <Route path="/subscriptions" element={<SubscriptionPlansPage />} />
-                <Route path="/my-subscriptions" element={<MySubscriptionsPage />} />
-              </Routes>
-            </BrowserRouter>
+            <OrdersProvider>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/catalog" element={<CatalogPage />} />
+                  <Route path="/product/:id" element={<ProductDetailPage />} />
+                  <Route path="/cart" element={<CartPage />} />
+                  <Route path="/checkout" element={<CheckoutPage />} />
+                  <Route path="/wishlist" element={<WishlistPage />} />
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/register" element={<RegisterPage />} />
+                  <Route path="/subscriptions" element={<SubscriptionPlansPage />} />
+                  <Route path="/my-subscriptions" element={<MySubscriptionsPage />} />
+                  <Route path="/orders" element={<MyOrdersPage />} />
+                  <Route path="/branches" element={<BranchLocatorPage />} />
+                  <Route path="/consultation" element={<ConsultationPage />} />
+                  <Route path="/consultation/chat/:pharmacistId" element={<ChatScreen />} />
+                  <Route path="/consultation/call/:pharmacistId" element={<VideoCallScreen />} />
+                </Routes>
+              </BrowserRouter>
+            </OrdersProvider>
           </SubscriptionProvider>
         </WishlistProvider>
       </CartProvider>

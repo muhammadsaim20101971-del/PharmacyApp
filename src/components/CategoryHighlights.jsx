@@ -36,7 +36,7 @@ const CATEGORIES = [
     description:
       "Chat or book a call with a licensed pharmacist for OTC guidance.",
     cta: "Talk to a pharmacist",
-    path: "#",
+    path: "/consultation",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.55L3 20l1.05-5.4A8.5 8.5 0 1 1 21 11.5Z" />

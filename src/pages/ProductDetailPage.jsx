@@ -102,11 +102,19 @@ export default function ProductDetailPage() {
               </div>
 
               <p className="product-detail__description">
-                {product.name} is commonly used as part of routine care in the{" "}
-                {product.category.toLowerCase()} category. Always follow the
-                dosage instructions on the pack, and consult a pharmacist if
-                you're combining it with other medication.
+                {product.longDescription}
               </p>
+
+              <ul className="product-detail__highlights">
+                {product.highlights.map((point) => (
+                  <li key={point}>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    {point}
+                  </li>
+                ))}
+              </ul>
 
               {product.inStock ? (
                 <>
@@ -196,6 +204,70 @@ export default function ProductDetailPage() {
                       </span>
                     </div>
                   ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="product-detail__extra">
+            <div className="product-detail__panel">
+              <h2 className="product-detail__panel-title">Product details</h2>
+              <div className="product-detail__table">
+                {product.details.map((row) => (
+                  <div className="product-detail__table-row" key={row.label}>
+                    <span className="product-detail__table-label">{row.label}</span>
+                    <span className="product-detail__table-value">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="product-detail__panel">
+              <div className="product-detail__reviews-header">
+                <h2 className="product-detail__panel-title">Customer reviews</h2>
+                <div className="product-detail__rating-summary">
+                  <span className="product-detail__rating-value">4.6</span>
+                  <div className="product-detail__stars">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <svg key={star} width="15" height="15" viewBox="0 0 24 24" fill="#E8965A" stroke="#E8965A" strokeWidth="1.5">
+                        <polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="product-detail__rating-count">Based on 24 reviews</span>
+                </div>
+              </div>
+
+              <div className="product-detail__review-list">
+                <div className="product-detail__review">
+                  <div className="product-detail__review-top">
+                    <span className="product-detail__review-name">Ayesha K.</span>
+                    <div className="product-detail__stars">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} width="13" height="13" viewBox="0 0 24 24" fill="#E8965A" stroke="#E8965A" strokeWidth="1.5">
+                          <polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                  <p>Delivered quickly and the packaging was sealed properly. Will order again.</p>
+                </div>
+
+                <div className="product-detail__review">
+                  <div className="product-detail__review-top">
+                    <span className="product-detail__review-name">Hamza R.</span>
+                    <div className="product-detail__stars">
+                      {[1, 2, 3, 4].map((star) => (
+                        <svg key={star} width="13" height="13" viewBox="0 0 24 24" fill="#E8965A" stroke="#E8965A" strokeWidth="1.5">
+                          <polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9" />
+                        </svg>
+                      ))}
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8965A" strokeWidth="1.5">
+                        <polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9" />
+                      </svg>
+                    </div>
+                  </div>
+                  <p>Good quality and fair price compared to my local pharmacy.</p>
                 </div>
               </div>
             </div>

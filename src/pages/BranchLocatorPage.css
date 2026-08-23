@@ -1,0 +1,175 @@
+.branch-locator-page {
+  background-color: #FFFFFF;
+  padding: 48px 24px 96px;
+}
+
+.branch-locator-page__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.branch-locator-page__heading {
+  margin-bottom: 36px;
+  max-width: 560px;
+}
+
+.branch-locator-page__eyebrow {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4FAE8C;
+  margin-bottom: 12px;
+}
+
+.branch-locator-page__title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: #16241E;
+  margin: 0 0 10px;
+}
+
+.branch-locator-page__subtext {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6B7A75;
+  margin: 0;
+}
+
+.branch-locator-page__layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  min-height: 560px;
+}
+
+.branch-locator-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 560px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.branch-locator-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  text-align: left;
+  background-color: #FAFAF9;
+  border: 1.5px solid #E2E8E4;
+  border-radius: 14px;
+  padding: 18px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.branch-locator-item:hover {
+  border-color: #4FAE8C;
+}
+
+.branch-locator-item--active {
+  border-color: #4FAE8C;
+  background-color: #F1F7F4;
+}
+
+.branch-locator-item__icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: rgba(79, 174, 140, 0.14);
+  color: #1F4A3D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.branch-locator-item__info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.branch-locator-item__name {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #16241E;
+  margin-bottom: 2px;
+}
+
+.branch-locator-item__address {
+  font-family: "Inter", sans-serif;
+  font-size: 12.5px;
+  color: #6B7A75;
+  margin-bottom: 10px;
+}
+
+.branch-locator-item__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.branch-locator-item__distance {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1F4A3D;
+}
+
+.branch-locator-item__divider {
+  width: 1px;
+  height: 11px;
+  background-color: #E2E8E4;
+}
+
+.branch-locator-item__status {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4FAE8C;
+}
+
+.branch-locator-item__status--closing {
+  color: #E8965A;
+}
+
+.branch-locator-item__extra {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: "Inter", sans-serif;
+  font-size: 11.5px;
+  color: #B7C2BD;
+}
+
+.branch-locator-page__map {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #E2E8E4;
+  min-height: 400px;
+}
+
+@media (max-width: 900px) {
+  .branch-locator-page__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .branch-locator-page__list {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .branch-locator-page__map {
+    min-height: 320px;
+  }
+}
