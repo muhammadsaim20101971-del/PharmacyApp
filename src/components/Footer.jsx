@@ -18,14 +18,14 @@ const LINK_GROUPS = [
       { label: "About Us", path: "#" },
       { label: "Branch Locator", path: "/branches" },
       { label: "Careers", path: "#" },
-      { label: "Blog", path: "#" },
+      { label: "Blog", path: "/blog" },
     ],
   },
   {
     title: "Support",
     links: [
-      { label: "FAQ", path: "#" },
-      { label: "Track Order", path: "#" },
+      { label: "FAQ", path: "/faq" },
+      { label: "Track Order", path: "/orders" },
       { label: "Returns & Exchanges", path: "#" },
       { label: "Contact Us", path: "#" },
     ],

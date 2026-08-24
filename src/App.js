@@ -19,6 +19,9 @@ import BranchLocatorPage from './pages/BranchLocatorPage';
 import ConsultationPage from './pages/ConsultationPage';
 import ChatScreen from './pages/ChatScreen';
 import VideoCallScreen from './pages/VideoCallScreen';
+import BlogListPage from './pages/BlogListPage';
+import BlogArticlePage from './pages/BlogArticlePage';
+import FaqPage from './pages/FaqPage';
 
 function App() {
   return (
@@ -44,6 +47,9 @@ function App() {
                   <Route path="/consultation" element={<ConsultationPage />} />
                   <Route path="/consultation/chat/:pharmacistId" element={<ChatScreen />} />
                   <Route path="/consultation/call/:pharmacistId" element={<VideoCallScreen />} />
+                  <Route path="/blog" element={<BlogListPage />} />
+                  <Route path="/blog/:id" element={<BlogArticlePage />} />
+                  <Route path="/faq" element={<FaqPage />} />
                 </Routes>
               </BrowserRouter>
             </OrdersProvider>
