@@ -26,7 +26,7 @@ const LINK_GROUPS = [
     links: [
       { label: "FAQ", path: "/faq" },
       { label: "Track Order", path: "/orders" },
-      { label: "Returns & Exchanges", path: "#" },
+      { label: "Returns & Exchanges", path: "/returns" },
       { label: "Contact Us", path: "#" },
     ],
   },
