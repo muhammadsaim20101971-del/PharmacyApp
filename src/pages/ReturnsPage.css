@@ -296,4 +296,18 @@
   .eligible-item__actions select {
     flex: 1;
   }
+
+  .return-tracker {
+    flex-wrap: wrap;
+    gap: 16px 0;
+  }
+
+  .return-tracker__step {
+    flex: 1 1 50%;
+  }
+
+  .return-item__header {
+    flex-direction: column;
+    gap: 8px;
+  }
 }

@@ -217,3 +217,27 @@
 .chat-screen__input-row button:hover {
   background-color: #439a7c;
 }
+
+@media (max-width: 480px) {
+  .chat-screen__header {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .chat-screen__name {
+    font-size: 13.5px;
+  }
+
+  .chat-screen__body {
+    padding: 16px;
+  }
+
+  .chat-bubble {
+    max-width: 85%;
+    font-size: 13.5px;
+  }
+
+  .chat-screen__input-row {
+    padding: 12px 14px;
+  }
+}

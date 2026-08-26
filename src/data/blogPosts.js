@@ -3,7 +3,8 @@ const BLOG_POSTS = [
     id: "diabetes-habits",
     category: "Chronic Care",
     title: "5 daily habits that help manage diabetes better",
-    image: "https://loremflickr.com/800/500/diabetes,health?lock=101",
+    image:
+      "https://images.unsplash.com/photo-1463367620918-d4824d05ce0e?w=800&h=500&fit=crop&auto=format&q=80",
     excerpt:
       "Small, consistent changes make the biggest difference in long-term blood sugar control.",
     readTime: "4 min read",
@@ -22,7 +23,8 @@ const BLOG_POSTS = [
     id: "fever-doctor",
     category: "Seasonal Health",
     title: "When a fever needs a doctor, not just paracetamol",
-    image: "https://loremflickr.com/800/500/thermometer,fever?lock=202",
+    image:
+      "https://images.unsplash.com/photo-1580917922805-f8f57e08c0ae?w=800&h=500&fit=crop&auto=format&q=80",
     excerpt:
       "Most fevers resolve on their own — here's how to tell when it's time to seek care.",
     readTime: "3 min read",
@@ -39,7 +41,8 @@ const BLOG_POSTS = [
     id: "first-aid-kit",
     category: "Family Care",
     title: "Building a first-aid kit that actually covers your family",
-    image: "https://loremflickr.com/800/500/firstaidkit,medical?lock=303",
+    image:
+      "https://images.unsplash.com/photo-1600091474842-83bb9c05a723?w=800&h=500&fit=crop&auto=format&q=80",
     excerpt:
       "A practical checklist for what belongs at home versus what to keep in a travel bag.",
     readTime: "5 min read",

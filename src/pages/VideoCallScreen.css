@@ -280,3 +280,41 @@
 .video-call__control--end:hover {
   background-color: #C94B3D;
 }
+
+@media (max-width: 480px) {
+  .video-call {
+    padding: 16px;
+  }
+
+  .video-call__ring-wrap {
+    width: 150px;
+    height: 150px;
+  }
+
+  .video-call__avatar--large {
+    width: 76px;
+    height: 76px;
+    font-size: 22px;
+  }
+
+  .video-call__controls {
+    gap: 14px;
+  }
+
+  .video-call__control {
+    width: 48px;
+    height: 48px;
+  }
+
+  .video-call__control--end {
+    width: 54px;
+    height: 54px;
+  }
+
+  .video-call__self-preview {
+    width: 84px;
+    height: 64px;
+    bottom: 10px;
+    right: 10px;
+  }
+}

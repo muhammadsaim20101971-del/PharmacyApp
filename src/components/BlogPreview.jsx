@@ -10,7 +10,8 @@ const POSTS = [
     excerpt:
       "Small, consistent changes make the biggest difference in long-term blood sugar control.",
     readTime: "4 min read",
-    image: "https://loremflickr.com/800/500/diabetes,health?lock=101",
+    image:
+      "https://images.unsplash.com/photo-1463367620918-d4824d05ce0e?w=800&h=500&fit=crop&auto=format&q=80",
   },
   {
     id: "fever-doctor",
@@ -19,7 +20,8 @@ const POSTS = [
     excerpt:
       "Most fevers resolve on their own — here's how to tell when it's time to seek care.",
     readTime: "3 min read",
-    image: "https://loremflickr.com/800/500/thermometer,fever?lock=202",
+    image:
+      "https://images.unsplash.com/photo-1580917922805-f8f57e08c0ae?w=800&h=500&fit=crop&auto=format&q=80",
   },
   {
     id: "first-aid-kit",
@@ -28,7 +30,8 @@ const POSTS = [
     excerpt:
       "A practical checklist for what belongs at home versus what to keep in a travel bag.",
     readTime: "5 min read",
-    image: "https://loremflickr.com/800/500/firstaidkit,medical?lock=303",
+    image:
+      "https://images.unsplash.com/photo-1600091474842-83bb9c05a723?w=800&h=500&fit=crop&auto=format&q=80",
   },
 ];
 

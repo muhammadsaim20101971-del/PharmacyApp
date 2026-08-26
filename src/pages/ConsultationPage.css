@@ -213,4 +213,8 @@
   .pharmacist-grid {
     grid-template-columns: 1fr;
   }
+
+  .consultation-page__title {
+    font-size: 24px;
+  }
 }

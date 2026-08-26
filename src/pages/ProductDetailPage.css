@@ -494,6 +494,11 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
+  .product-detail__table-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
 }
 
 @media (max-width: 860px) {
