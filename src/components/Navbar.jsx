@@ -63,6 +63,14 @@ export default function Navbar() {
               </Link>
             );
           })}
+
+          <Link
+            to="/login"
+            className="navbar__link navbar__link--mobile-login"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Log in
+          </Link>
         </nav>
 
         <div className="navbar__actions">
