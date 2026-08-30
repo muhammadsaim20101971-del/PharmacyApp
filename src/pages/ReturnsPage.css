@@ -299,11 +299,15 @@
 
   .return-tracker {
     flex-wrap: wrap;
-    gap: 16px 0;
+    gap: 24px 0;
   }
 
   .return-tracker__step {
     flex: 1 1 50%;
+  }
+
+  .return-tracker__step::before {
+    display: none;
   }
 
   .return-item__header {
